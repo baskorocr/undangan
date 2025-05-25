@@ -3297,6 +3297,20 @@
         id="weddingpress-wdp-js"></script>
     <script src="https://undanganwebkami.com/wp-content/plugins/weddingpress/assets/js/guest-form.js?ver=3.0.11"
         id="kirim-kit-js"></script>
+<script>
+function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const guestName = getURLParameter('to');
+    if (guestName) {
+        const decodedName = decodeURIComponent(guestName);
+        document.querySelector('.wdp-name.namatamu').innerHTML = decodedName;
+    }
+});
+</script>
 </body>
 
 </html>
